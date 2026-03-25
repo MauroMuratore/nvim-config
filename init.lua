@@ -14,3 +14,12 @@ vim.opt.rtp:prepend(lazypath)
 require("options")
 require("keymaps")
 require("lazy").setup("plugins")
+
+
+vim.api.nvim_create_autocmd("VimEnter", {
+    callback = function()
+        if vim.fn.argc() == 0 then
+            require("yazi").yazi()
+        end
+    end
+})
