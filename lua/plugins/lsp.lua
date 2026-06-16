@@ -10,13 +10,13 @@ return {
     dependencies = { "williamboman/mason.nvim" },
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "intelephense", "ts_ls", "eslint", "pylsp" },
+        ensure_installed = { "intelephense", "ts_ls", "eslint", "pylsp", "clangd" },
         automatic_installation = true,
       })
     end,
   },
 
-  { "neovim/nvim-lspconfig",       -- ← uno solo!
+  { "neovim/nvim-lspconfig",       
     dependencies = {
       "williamboman/mason-lspconfig.nvim",
       "hrsh7th/cmp-nvim-lsp",
@@ -26,6 +26,7 @@ return {
       require("lsp.intelephense")
       require("lsp.ts_ls")
       require("lsp.eslint")
+      require("lsp.clangd")
     end,
   },
 
