@@ -21,4 +21,10 @@ M.lsp_keymaps = function(bufnr)
   map("n", "]d",        vim.diagnostic.goto_next,  opts)
 end
 
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    M.lsp_keymaps(args.buf)
+  end,
+})
+
 return M

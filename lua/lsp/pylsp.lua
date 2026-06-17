@@ -5,7 +5,7 @@ vim.lsp.config("pylsp", {
   settings = {
     pylsp = {
       plugins = {
-        pycodestyle     = { enabled = true, ignore = { "E501" } },
+        pycodestyle     = { enabled = true, ignore = { "E501", "E251" } },
         flake8          = { enabled = false },
         black           = { enabled = true },
         isort           = { enabled = true },
