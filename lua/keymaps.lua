@@ -11,6 +11,10 @@ M.lsp_keymaps = function(bufnr)
 
   -- LSP
   map("n", "gd",   vim.lsp.buf.definition,   opts)
+  map("n", "gD", function()              
+      vim.cmd("tab split")
+      vim.lsp.buf.definition()
+  end, opts) 
   map("n", "K",    vim.lsp.buf.hover,         opts)
   map("n", "gr",   vim.lsp.buf.references,    opts)
   map("n", "<F2>", vim.lsp.buf.rename,        opts)
@@ -22,9 +26,9 @@ M.lsp_keymaps = function(bufnr)
 end
 
 vim.api.nvim_create_autocmd("LspAttach", {
-  callback = function(args)
-    M.lsp_keymaps(args.buf)
-  end,
+    callback = function(args)
+        M.lsp_keymaps(args.buf)
+    end,
 })
 
 return M
