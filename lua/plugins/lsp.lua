@@ -10,7 +10,7 @@ return {
     dependencies = { "williamboman/mason.nvim" },
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "intelephense", "ts_ls", "eslint", "pylsp", "clangd" },
+        ensure_installed = { "intelephense", "ts_ls", "eslint", "pylsp", "clangd", "gopls" },
         automatic_installation = true,
       })
     end,
@@ -27,6 +27,7 @@ return {
       require("lsp.ts_ls")
       require("lsp.eslint")
       require("lsp.clangd")
+      require("lsp.gopls")
     end,
   },
 
